@@ -1,8 +1,10 @@
 class Pai extends React.Component {
   render() {
+    let exibirOpcaoZerar = this.props.numeroCliques > 0 ? 'visible' : 'hidden'
+
     return(
       <div>
-        <p>Cliques: {this.props.numeroCliques} (<a href="" onClick={this.props.zerarContagem}>zerar</a>)</p>
+        <p>Cliques: {this.props.numeroCliques} <a style={{visibility: exibirOpcaoZerar}} href="" onClick={this.props.zerarContagem}>(zerar)</a></p>
         <ul>
           {this.props.children}
         </ul>
