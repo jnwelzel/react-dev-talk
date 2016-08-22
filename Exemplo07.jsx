@@ -2,7 +2,7 @@ class Pai extends React.Component {
   render() {
     return(
       <div>
-        <p>Cliques: {this.props.numeroCliques}</p>
+        <p>Cliques: {this.props.numeroCliques} (<a href="" onClick={this.props.zerarContagem}>zerar</a>)</p>
         <ul>
           {this.props.children}
         </ul>
@@ -26,6 +26,7 @@ class Application extends React.Component {
     super(props)
 
     this.clickHandler = (event) => this.click(event)
+    this.zerarHandler = (event) => this.zerar(event)
 
     this.state = {
       cliques: 0
@@ -34,7 +35,7 @@ class Application extends React.Component {
 
   render() {
     return (
-      <Pai numeroCliques={this.state.cliques}>
+      <Pai numeroCliques={this.state.cliques} zerarContagem={this.zerarHandler}>
         <Filho click={this.clickHandler}>Filho 1</Filho>
         <Filho click={this.clickHandler}>Filho 2</Filho>
       </Pai>
@@ -46,6 +47,14 @@ class Application extends React.Component {
 
     this.setState({
       cliques: this.state.cliques + 1
+    })
+  }
+
+  zerar(event) {
+    event.preventDefault()
+
+    this.setState({
+      cliques: 0
     })
   }
 }
