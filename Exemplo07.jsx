@@ -15,7 +15,7 @@ class Filho extends React.Component {
   render() {
     return(
       <li>
-        <a href onClick={this.props.click}>{this.props.children}</a>
+        <a href="" onClick={this.props.click}>{this.props.children}</a>
       </li>
     )
   }
@@ -24,7 +24,7 @@ class Filho extends React.Component {
 class Application extends React.Component {
   constructor(props) {
     super(props)
-    
+
     this.clickHandler = (event) => this.click(event)
 
     this.state = {
