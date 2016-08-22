@@ -30,7 +30,7 @@ Exemplo03.propTypes = {
 
 // -----------------------------------------------------------------------
 
-// 2 - Utilização do componente (geralmente fica em outro arquivo ex. Shoo.jsx)
+// 2 - Utilização do componente
 const componente =
   <Exemplo03 titulo="Olá React">
     <li>Isso aqui é o <b>this.props.children</b> do componente <b>Exemplo03.jsx</b></li>
